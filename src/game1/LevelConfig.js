@@ -406,7 +406,7 @@ const levelConfigs = [
       bottomRight: { x: 1820, y: 500 },
     },
     water: {
-      topLeft: { x: 0, y: 550 },
+      topLeft: { x: 0, y: 650 },
       bottomRight: { x: 1720, y: 1080 },
     },
     waterlineOffset: 0,
