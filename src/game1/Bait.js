@@ -1,4 +1,4 @@
-import { MAX_VELOCITY, RESET_DISTANCE, BASE_GRAVITY, STRONG_GRAVITY, BASE_VELOCITY } from './Constants.js'
+import { MAX_VELOCITY, RESET_DISTANCE, BASE_GRAVITY, STRONG_GRAVITY, SLOW_GRAVITY, BASE_VELOCITY } from './Constants.js'
 
 export default class Bait {
   constructor(scene, player) {
@@ -82,8 +82,9 @@ export default class Bait {
             const distanceToPlayer = Phaser.Math.Distance.Between(this.ball.x, this.ball.y, targetX, targetY);
 
             // Adjust velocity based on distance - slower pull for closer bait
-            if (distanceToPlayer <= 100) {
+            if (distanceToPlayer <= 200) {
                 this.ball.body.setVelocity(Math.cos(angle) * 300, Math.sin(angle) * 300);
+                this.ball.body.setGravityY(BASE_GRAVITY)
             } else {
                 this.ball.body.setVelocity(
                     Math.cos(angle) * 700, 
