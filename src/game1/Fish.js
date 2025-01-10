@@ -109,6 +109,13 @@ export default class Fish {
     if (this.sprite.y > bounds.bottomRight.y - margin) {
       this.sprite.body.setVelocityY(-Math.abs(this.sprite.body.velocity.y));
     }
+    
+    // Flip the fish based on horizontal velocity
+    if (this.sprite.body.velocity.x < 0) {
+      this.sprite.flipX = true;
+    } else if (this.sprite.body.velocity.x > 0) {
+      this.sprite.flipX = false; 
+    }
   }
   
 
